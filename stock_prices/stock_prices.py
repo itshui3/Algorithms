@@ -3,25 +3,25 @@
 import argparse
 
 def find_max_profit(prices):
-    max = 0
     min = prices[0]
+    max = prices[1] - prices[0]
 
-    for i in prices:
+    for i in range(1, len(prices)):
 
-        if((i - min) > (max - min)):
-            max = i - min
+        if((prices[i] - min) > (max)):
+            max = prices[i] - min
 
-        if(i < min):
-            min = i
+        if(prices[i] < min):
+            min = prices[i]
 
     return max
 
-import random
-myNums = []
-for i in range(0, 10):
-    myNums.append(random.randint(0, 20))
+# import random
+# myNums = []
+# for i in range(0, 10):
+#     myNums.append(random.randint(0, 20))
 
-print(find_max_profit(myNums))
+# print(find_max_profit([100, 90, 80, 50, 20, 10]))
 
 
 if __name__ == '__main__':
