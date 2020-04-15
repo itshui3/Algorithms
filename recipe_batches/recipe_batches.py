@@ -14,13 +14,7 @@ def recipe_batches(recipe, ingredients):
         else:
             return 0
 
-    lowestDenom = rec_batches[0]
-
-    for i in rec_batches:
-        if(i < lowestDenom):
-            lowestDenom = i
-
-    return lowestDenom
+    return min(rec_batches)
 
 
 recipe = { 'milk': 100, 'butter': 50, 'flour': 5 }
